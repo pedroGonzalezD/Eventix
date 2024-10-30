@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Link, Navigate } from 'react-router-dom';
-import styles from './Login.module.scss';
+import styles from './LogIn.module.scss';
 import { useAuth } from '../../context/AuthContext';
 
 
