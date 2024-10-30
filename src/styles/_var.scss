@@ -1,0 +1,33 @@
+$small-mobile: 480px;
+$tablet: 768px;
+$small-desktop: 1024px;
+$large-desktop: 1440px;
+
+//Colors
+
+$line: hsla(0, 0%, 50%, 0.5);
+
+$lightGray:hsl(210, 11%, 96%);
+$lightGrayHover:hsl(225, 15%, 95%);
+$lightGrayActive:hsl(218, 14%, 89%);
+$normalGray:hsl(218, 15%, 65%);
+$normalGrayHover:hsl(218, 11%, 58%);
+$normalGrayActive:hsl(217, 9%, 52%);
+$darkGray:hsl(216, 8%, 49%);
+$darkGrayHover:hsl(218, 8%, 39%);
+$darkGrayActive:hsl(217, 9%, 29%);
+$darkerGray:hsl(216, 9%, 23%);
+
+$lightGreen:hsl(124, 52%, 94%);
+$lightGreenHover:hsl(124, 55%, 90%);
+$lightGreenActive:hsl(124, 53%, 80%);
+$normalGreen:hsl(124, 100%, 35%);
+$normalGreenHover:hsl(124, 100%, 32%);
+$normalGreenActive:hsl(124, 100%, 28%);
+$darkGreen:hsl(124, 100%, 26%);
+$darkGreenHover:hsl(124, 100%, 21%);
+$darkGreenActive:hsl(124, 100%, 16%);
+$darkerGreen:hsl(124, 100%, 12%);
+
+$lightRed:hsl(0, 69%, 95%);
+$normalRed:#d42620;

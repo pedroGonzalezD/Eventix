@@ -1,0 +1,154 @@
+@import '../../styles/var';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  gap: 10px;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid $line;
+  box-shadow: 2px 2px 10px $line;
+}
+
+.title {
+  font-size: 28px;
+  color: $normalGreen;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: $normalGreen;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: $normalGreen;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message, .logIn {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.logIn {
+  text-align: center;
+}
+
+.logIn a {
+  color: $normalGreen;
+}
+
+.logIn a:hover {
+  text-decoration: underline $normalGreenHover;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid $line;
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,.form label .input:valid + span,
+.form label .input:not(:placeholder-shown) + span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid + span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: $darkGreen;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: $darkGreenHover;
+}
+
+.submit:active{
+  background-color: $darkGreenActive;
+  transform: scale(0.9);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.error{
+  color: $normalRed;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+  .form{
+    max-width: 550px;
+    padding: 24px 48px;
+    gap:24px
+  }
+}

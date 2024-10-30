@@ -1,0 +1,174 @@
+@import '../../styles/var';
+
+.form{
+  margin: 2rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  width:100%
+}
+
+.ul{
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+}
+
+.li{
+  margin-bottom: 2.5rem;
+  position: relative;
+  color: $darkerGray;
+  
+  label{
+    font-size: 14px;
+    font-weight: 500;
+
+    span{
+      color: $normalRed;
+    }
+  }
+}
+
+.error{
+  position: absolute;
+  color: $normalRed;
+  font-size: 12px;
+}
+
+.input{
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 4px;
+  border: 1px solid $line;
+  width: 100%;
+
+  &:focus{
+    outline: 1px solid $normalGray;
+  }
+}
+
+.textarea{
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+  border: 1px solid $line;
+  font-size: 16px;
+  width: 100%;
+  height: 150px;
+
+  &:focus{
+    outline: 1px solid $normalGray;
+  }
+}
+
+.uploadContainer {
+  margin-top: 4px;
+
+  p {
+    display: none;
+  }
+}
+
+.uploadButton {
+  border: 2px solid $darkGreen;
+  background-color: $lightGreen;
+  color: $darkGreen;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  padding: 12px;
+
+  svg{
+    margin-right: 4px;
+  }
+}
+
+.hiddenFileInput {
+  display: none;
+}
+
+.fileName {
+  margin-top: 10px;
+  color: $normalGreen;
+  font-size: 14px;
+}
+
+.error {
+  color: $normalRed;
+  font-size: 12px;
+}
+
+
+.submit{
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  background-color: $darkGreen;
+  width: 100%;
+  color: white;
+  width: 90%;
+  transition: background-color 100ms, transform 100ms;
+  max-width: 350px;
+
+  &:hover{
+    background-color: $darkGreenHover;
+  }
+
+  &:active{
+    background-color: $darkGreenActive;
+    transform: scale(0.9);
+  }
+}
+
+.title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: $darkGreenHover
+}
+
+@media (min-width: 768px) {
+  .ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    column-gap: 20px;
+  }
+
+  .li:last-of-type{
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 80%;
+    justify-self: center;
+    
+    label{
+      text-align: center;
+    }
+  }
+
+  .li{
+
+    label{
+      font-size: 1rem;
+    }
+  }
+
+  .error{
+    font-size: 14px;
+  }
+
+  .input{
+    font-size: 20px;
+    padding: 16px 12px;
+  }
+
+  .uploadContainer{
+    width: 100%;
+  }
+}

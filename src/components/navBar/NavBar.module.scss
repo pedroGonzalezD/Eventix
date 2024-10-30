@@ -1,0 +1,280 @@
+@import '../../styles/var';
+
+.overlay{
+  position: fixed;
+  backdrop-filter: blur(10px);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 65px;
+  display: none;
+  background-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.visible{
+  display: block;
+}
+
+.nav{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  bottom: 100%;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  z-index: 900;
+  transition: opacity 400ms ease, transform 400ms ease, visibility 400ms ease;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 2px solid $lightGrayActive;
+  max-width: 450px;
+  width: calc(100% - 2rem);
+  
+  &.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+  }
+  
+  ul{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+
+    li{
+      width: 100%;
+      text-align: center;
+
+      &:nth-child(-n + 2){
+        border-bottom: 1px solid $lightGrayActive;  
+      }
+      
+      a{
+        padding: 1.5rem 0;
+        width: 100%;
+        display: block;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+        border-bottom: 1px solid $lightGrayActive;;
+      }
+    }
+  }
+}
+
+.accountMenu{
+  border-radius: 0 !important;
+}
+
+
+.accountButton, .logoutButton{
+  padding: 1.5rem 0;
+  width: 100%;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.accountButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+
+.logoutButton{
+  background-color: mix($lightRed, transparent, 60%);
+  color: $normalRed
+}
+
+.border{
+  border-top: 1px solid $lightGrayActive;
+}
+
+.accountA{
+  background-color: mix($lightGreen, transparent, 60%);
+  
+  a{
+    color: $darkGreen !important
+  }
+}
+
+.slideEnter{
+  max-height: 0;
+}
+
+.slideEnterActive{
+  max-height: 350px;
+  transition: max-height 300ms ease;
+}
+
+.slideExit{
+  max-height: 350px;
+}
+
+.slideExitActive{
+  max-height: 0;
+  transition: max-height 300ms ease;
+}
+
+.arrow{
+  display: inline-block;
+  margin-left:  4px;
+  transform: rotate(90deg);
+  transition: transform 300ms ease;
+}
+
+.arrow.open{
+  transform: rotate(-90deg);
+}
+
+@media (min-width: 1024px) {
+  .nav{
+    all: unset;
+
+    ul, ul li, ul li a{
+      all: unset;
+    }
+
+    ul li:nth-child(-n + 2){
+      border-bottom: none  
+    }
+
+    &.active{
+      all: unset
+    }
+    .accountMenu{
+      all: unset;
+
+      li a{
+        all: unset;
+      }
+    }
+
+    ul, li{
+      position: relative;
+    }
+  }
+
+  .accountButton, .logoutButton{
+    all: unset
+  }
+
+  .nav ul{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+
+    li a{
+      text-decoration: none;
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      display: inline-block;
+      transition: background-color 300ms, color 300ms, transform 200ms;
+
+      &:hover{
+        color: white;
+        background-color: $normalGreenHover;
+      }
+
+      &:active{
+        background-color: $normalGreenActive;
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .visible{
+    display: none;
+  }
+
+  .accountButton{
+    display: flex;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    transition: background-color 300ms, color 300ms, transform 200ms;
+
+      &:hover{
+        color: white;
+        background-color: $normalGreenHover;
+      }
+
+      &:active{
+        background-color: $normalGreenActive;
+        transform: scale(0.9);
+      }
+  }
+
+ .nav .accountMenu{
+  position: absolute;
+  border: 1px solid $lightGrayActive;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  border-top: none;
+  background: white;
+  width: 200px;
+  border-radius: 0 0 10px 10px !important;
+  overflow: hidden;
+  max-height: 220px;
+
+  li{
+    width: 100%;
+  }
+
+  li a{
+    color: black !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+
+    &:hover{
+      color: white !important;
+    }
+
+    &:active{
+      transform: scale(1);
+    }
+  }
+ }
+
+ .logoutButton{
+  display: block;
+  cursor: pointer;
+  width: 100%; 
+  text-align: center;
+  padding: 1.5rem 0;
+  border-radius: 0 0 10px 10px;
+
+  &:hover{
+    color: white;
+    background-color: $normalRed;
+  }
+ }
+
+ .slideEnter{
+  max-height: 0 !important;
+}
+
+.slideEnterActive{
+  max-height: 220px !important;
+  transition: max-height 300ms !important;
+}
+
+.slideExit{
+  max-height: 220px !important;
+}
+
+.slideExitActive{
+  max-height: 0 !important;
+  transition: max-height 300ms !important;
+}
+}
