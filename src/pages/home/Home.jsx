@@ -89,8 +89,6 @@ const Home = () => {
           />
         ))}
       </div>
-
-
       
       <input
         type="text"
