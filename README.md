@@ -8,7 +8,7 @@ Eventix is a personal project focused on functionality. It allows users to submi
 
 ## Related Repositories
 
-- [Backend Repository](https://github.com/yourusername/backend-eventix) - The backend implementation for Eventix.
+- [Backend Repository](https://github.com/pedroGonzalezD/Eventix-Backend) - The backend implementation for Eventix.
 
 ## How to Test
 
